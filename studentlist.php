@@ -1,6 +1,10 @@
 <?php
 include('./config/db.config.php');
-
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); 
+    exit();
+}
 if (isset($_POST['delete_id'])) {
     $delete_id = mysqli_real_escape_string($db, $_POST['delete_id']);
     $sql_delete = "DELETE FROM student WHERE id = $delete_id";
@@ -50,7 +54,7 @@ if (!$result) {
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>SL</th>
                     <th>Name</th>
                     <th>Address</th>
                     <th>Phone Number</th>

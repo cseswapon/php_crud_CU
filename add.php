@@ -1,5 +1,10 @@
 <?php
 include('./config/db.config.php');
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = mysqli_real_escape_string($db, $_POST['name']);
@@ -43,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="phone" class="form-label">Phone Number</label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100  ">Submit</button>
                 </form>
             </div>
         </div>
