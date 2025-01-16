@@ -1,41 +1,6 @@
 <?php
-include('./config/db.config.php');
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php"); 
-    exit();
-}
-if (isset($_POST['delete_id'])) {
-    $delete_id = mysqli_real_escape_string($db, $_POST['delete_id']);
-    $sql_delete = "DELETE FROM student WHERE id = $delete_id";
-    if (mysqli_query($db, $sql_delete)) {
-        echo "<div class='alert alert-success'>Student deleted successfully.</div>";
-    } else {
-        echo "<div class='alert alert-danger'>Error deleting student: " . mysqli_error($db) . "</div>";
-    }
-}
-
-if (isset($_POST['edit_id'])) {
-    $edit_id = mysqli_real_escape_string($db, $_POST['edit_id']);
-    $name = mysqli_real_escape_string($db, $_POST['name']);
-    $address = mysqli_real_escape_string($db, $_POST['address']);
-    $phone = mysqli_real_escape_string($db, $_POST['phone']);
-    
-    $sql_update = "UPDATE student SET name='$name', address='$address', phone_number='$phone' WHERE id=$edit_id";
-    
-    if (mysqli_query($db, $sql_update)) {
-        echo "<div class='alert alert-success'>Student updated successfully.</div>";
-    } else {
-        echo "<div class='alert alert-danger'>Error updating student: " . mysqli_error($db) . "</div>";
-    }
-}
-
-$sql = "SELECT * FROM student";
-$result = mysqli_query($db, $sql);
-
-if (!$result) {
-    die("ERROR: Could not execute $sql. " . mysqli_error($db));
-}
+    include('../controller/checkLogin.php');
+    include('../controller/studentlist.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +11,7 @@ if (!$result) {
     <title>Student List | City University</title>
 </head>
 <body>
-    <?php include('./shared/header.php') ?>
+    <?php include('../shared/header.php') ?>
 
     <main class="container my-5 py-5">
         <h2 class="mb-4">Student List</h2>
@@ -88,7 +53,7 @@ if (!$result) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="studentlist.php" method="POST">
+                    <form action="../controller/studentlist.php" method="POST">
                         <input type="hidden" id="editId" name="edit_id">
                         <div class="mb-3">
                             <label for="editName" class="form-label">Name</label>
@@ -120,7 +85,7 @@ if (!$result) {
                     Are you sure you want to delete this student?
                 </div>
                 <div class="modal-footer">
-                    <form action="studentlist.php" method="POST">
+                    <form action="../controller/studentlist.php" method="POST">
                         <input type="hidden" id="deleteId" name="delete_id">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -132,31 +97,8 @@ if (!$result) {
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="../js/studentlist.js"></script>
 
-    <script>
-        const editModal = document.getElementById('editModal');
-        editModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const studentId = button.getAttribute('data-id');
-            const studentName = button.getAttribute('data-name');
-            const studentAddress = button.getAttribute('data-address');
-            const studentPhone = button.getAttribute('data-phone');
-
-            document.getElementById('editId').value = studentId;
-            document.getElementById('editName').value = studentName;
-            document.getElementById('editAddress').value = studentAddress;
-            document.getElementById('editPhone').value = studentPhone;
-        });
-
-        const deleteModal = document.getElementById('deleteModal');
-        deleteModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const studentId = button.getAttribute('data-id');
-            const modalInput = deleteModal.querySelector('#deleteId');
-            modalInput.value = studentId;
-        });
-    </script>
-
-    <?php include('./shared/footer.php') ?>
+    <?php include('../shared/footer.php') ?>
 </body>
 </html>

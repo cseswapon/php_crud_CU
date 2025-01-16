@@ -1,0 +1,89 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #121212;
+  color: #ffffff;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section {
+  height: 53vh;
+  background: linear-gradient(135deg, black, black, black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.btn-glow {
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.8);
+  transform: scale(1.05);
+}
+
+.features {
+  padding: 4rem 0;
+  background: #1b1b1b;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #0f2027, #203a43);
+    } */
+
+.feature-box i {
+  font-size: 2rem;
+  color: #ff6a00;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  padding: 1.5rem 0;
+  color: white;
+  background: linear-gradient(135deg, #1b1b1b40);
+  text-align: center;
+}
+
+.footer p {
+  color: #bbb;
+  font-size: 0.9rem;
+}

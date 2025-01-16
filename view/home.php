@@ -1,16 +1,8 @@
 <?php
-include('./config/db.config.php');
-
-$sql = "SELECT * FROM student";
-$result = mysqli_query($db, $sql);
-
-if (!$result) {
-    die("ERROR: Could not execute $sql. " . mysqli_error($db));
-}
-
+    include('../controller/checkLogin.php');
+    include('../controller/studentlist.php');
 ?>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +10,7 @@ if (!$result) {
     <title>Home | City University</title>
 </head>
 <body>
-    <?php include('./shared/header.php') ?>
+    <?php include('../shared/header.php') ?>
         <main class="my-5 py-5 container">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php 
@@ -38,6 +30,6 @@ if (!$result) {
                 ?>
             </div>
         </main>
-   <?php include('./shared/footer.php') ?>
+   <?php include('../shared/footer.php') ?>
 </body>
 </html>
