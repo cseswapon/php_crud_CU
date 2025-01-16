@@ -18,9 +18,9 @@
                         echo '
                             <div class="col-sm-4">
                                 <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body ">
                                         <h5 class="card-title">' . htmlspecialchars($row['name']) . '</h5>
-                                        <p class="card-text mb-0">With supporting text below as a natural lead-in to additional content.</p>
+                                        <p class="card-text mb-0">' . htmlspecialchars($row['address']) . '</p>
                                         <p>Phone: <a href="tel:' . htmlspecialchars($row['phone_number']) . '">' . htmlspecialchars($row['phone_number']) . '</a></p>
                                     </div>
                                 </div>
