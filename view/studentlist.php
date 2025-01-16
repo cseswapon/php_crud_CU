@@ -14,12 +14,12 @@
     <?php include('../shared/header.php') ?>
 
     <main class="container my-5 py-5">
-        <h2 class="mb-4">Student List</h2>
+        <h2 class="mb-4 text-center">Student List</h2>
 
-        <table class="table table-striped">
+        <table class="table table-striped text-center shadow-sm">
             <thead>
                 <tr>
-                    <th>SL</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Address</th>
                     <th>Phone Number</th>
@@ -35,8 +35,8 @@
                             <td>{$row['address']}</td>
                             <td>{$row['phone_number']}</td>
                             <td>
-                                <button class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#editModal' data-id='{$row['id']}' data-name='{$row['name']}' data-address='{$row['address']}' data-phone='{$row['phone_number']}'>Edit</button>
-                                <button class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='{$row['id']}'>Delete</button>
+                                <button class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#editModal' data-id='{$row['id']}' data-name='{$row['name']}' data-address='{$row['address']}' data-phone='{$row['phone_number']}'>Edit</button>
+                                <button class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='{$row['id']}'>Delete</button>
                             </td>
                           </tr>";
                 }
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
