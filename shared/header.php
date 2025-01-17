@@ -38,6 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./studentlist.php">All Students</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./allusers.php">All Users</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
             </div>

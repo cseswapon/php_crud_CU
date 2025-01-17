@@ -30,7 +30,7 @@
                         <label for="phone" class="form-label fw-bold">Phone Number</label>
                         <input type="text" class="form-control border-gradient" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
-                    <button type="submit" class="btn btn-gradient w-100 text-white fw-bold">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 text-white fw-bold">Submit</button>
                 </form>
             </div>
         </div>
