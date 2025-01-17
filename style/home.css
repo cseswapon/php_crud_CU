@@ -8,6 +8,11 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.carousel-item img {
+  height: 50vh;
+  object-fit: cover;
+}
+
 .navbar-brand {
   font-weight: bold;
   background: linear-gradient(90deg, #ff6a00, #ee0979);

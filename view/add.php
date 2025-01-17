@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Student | City University</title>
+    <title>Add Student | University</title>
 </head>
 <body>
     <?php include('../shared/header.php') ?>

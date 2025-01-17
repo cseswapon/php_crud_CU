@@ -8,11 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List | City University</title>
+    <title>Student List | University</title>
 </head>
 <body>
     <?php include('../shared/header.php') ?>
 
+    <?php if (mysqli_num_rows($result) > 0)  { ?>
     <main class="container my-5 py-5">
         <h2 class="mb-4 text-center">Student List</h2>
 
@@ -44,6 +45,11 @@
             </tbody>
         </table>
     </main>
+    <?php } else { ?>
+       <div class="container text-center text-danger my-5">
+           <i class="fa fa-ban" aria-hidden="true"></i> No Data <i class="fa fa-ban" aria-hidden="true"></i>
+        </div>
+    <?php } ?>
 
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">

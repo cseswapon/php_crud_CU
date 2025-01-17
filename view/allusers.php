@@ -8,12 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List | City University</title>
+    <title>User List | University</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <?php include('../shared/header.php'); ?>
-
+    <?php if (mysqli_num_rows($result) > 0)  { ?>
     <main class="container my-5 py-5">
         <h2 class="mb-4 text-center">User List</h2>
 
@@ -38,6 +38,11 @@
             </tbody>
         </table>
     </main>
+    <?php } else { ?>
+       <div class="container text-center text-danger my-5">
+           <i class="fa fa-ban" aria-hidden="true"></i> No Data <i class="fa fa-ban" aria-hidden="true"></i>
+        </div>
+    <?php } ?>
 
     <?php include('../shared/footer.php'); ?>
 </body>

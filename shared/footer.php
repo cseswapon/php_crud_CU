@@ -1,9 +1,9 @@
-<footer class="bg-dark text-light py-4">
+<footer class="bg-dark text-light py-5">
     <div class="container">
         <div class="row ">
             <div class="col-md-4 mb-3">
                 <h5>About Us</h5>
-                <p>City University is committed to providing quality education to empower students with knowledge and skills to excel in their careers.</p>
+                <p>University is committed to providing quality education to empower students with knowledge and skills to excel in their careers.</p>
             </div>
             <div class="col-md-4 mb-3 px-5">
                 <h5>Quick Links</h5>
@@ -25,7 +25,7 @@
         <hr class="bg-light">
         <div class="row">
             <div class="col text-center">
-                <p class="mb-0">&copy; <?php echo date('Y'); ?> City University. All Rights Reserved.</p>
+                <p class="mb-0">&copy; <?php echo date('Y'); ?> University. All Rights Reserved.</p>
             </div>
         </div>
     </div>

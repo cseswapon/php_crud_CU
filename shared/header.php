@@ -23,7 +23,7 @@
         <div class="row align-items-center">
             <div class="col-4 col-md-3">
                 <div class="logo">
-                    <a class="nav-link ps-0" href="./home.php">S</a>
+                    <a class="nav-link ps-0" href="./home.php">UnIvErSiTy</a>
                 </div>
             </div>
             <div class="col-4 col-md-6 text-center">
