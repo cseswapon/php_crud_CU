@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar navbar-expand-lg position-sticky w-100 top-0 start-0 z-index-10">
     <div class="container-fluid px-5">
-      <a class="navbar-brand fs-1" href="/">UnIvErSiTy</a>
+      <a class="navbar-brand fs-1" href="./">UnIvErSiTy</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
